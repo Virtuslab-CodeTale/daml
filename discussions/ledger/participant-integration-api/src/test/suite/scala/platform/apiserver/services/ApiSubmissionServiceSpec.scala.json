@@ -1,0 +1,24 @@
+[
+  {
+    "id" : "0a9bbcda-3bcf-43c4-9c03-d3754503f082",
+    "prId" : 10518,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10518#pullrequestreview-726477560",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "72e79465-bf99-4999-9017-902ac56dfb32",
+        "parentId" : null,
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "I suggest to have them named consistently, i.e. either all with a `mock` prefix (my preference, can make named parameters redundant) or all without.",
+        "createdAt" : "2021-08-10T14:01:21Z",
+        "updatedAt" : "2021-08-10T14:10:18Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "8cfab207b79752767512ec013045148354732154",
+    "line" : 44,
+    "diffHunk" : "@@ -1,1 +318,322 @@    val writeService = mock[state.WriteService]\n    val indexSubmissionService = mock[IndexSubmissionService]\n    val mockCommandExecutor = mock[CommandExecutor]\n\n    when("
+  }
+]

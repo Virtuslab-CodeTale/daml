@@ -240,5 +240,60 @@
     "commit" : "c1f3711f285befaaee9cf5db7df6f0bdc78f6ca1",
     "line" : 20,
     "diffHunk" : "@@ -1,1 +232,236 @@\n      /** A protobuf gRPC status representing the error. */\n      def status: RpcStatus\n\n      /** Whether the rejection is a definite answer for the deduplication guarantees"
+  },
+  {
+    "id" : "5554b176-e0d1-4b6a-a8b7-8981cd4db5e5",
+    "prId" : 10398,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10398#pullrequestreview-714803710",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "b3fc0ca0-6bd0-45e9-95d0-f1012a002aa4",
+        "parentId" : null,
+        "authorId" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "body" : "What's the advantage of having an `RpcStatus` field as well as `code` and `message` fields? Do we expect `message` to be different from `status.message` and `code` different from `status.code`?",
+        "createdAt" : "2021-07-26T09:17:04Z",
+        "updatedAt" : "2021-07-26T10:41:40Z",
+        "lastEditedBy" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "f5ef1a1f-c499-4bc8-813d-f4765732f729",
+        "parentId" : "b3fc0ca0-6bd0-45e9-95d0-f1012a002aa4",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "Not necessarily, but a `status` can have a lot more.",
+        "createdAt" : "2021-07-26T10:49:20Z",
+        "updatedAt" : "2021-07-26T10:49:20Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "330712b6-5057-4c11-9788-721ae8607f7d",
+        "parentId" : "b3fc0ca0-6bd0-45e9-95d0-f1012a002aa4",
+        "authorId" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "body" : "To put it in another way: I'm wondering if a single `RpcStatus` field would be enough for our needs?",
+        "createdAt" : "2021-07-26T12:20:49Z",
+        "updatedAt" : "2021-07-26T12:20:50Z",
+        "lastEditedBy" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "d20c09cd-8a88-4567-a60f-1d6b59cbd1f7",
+        "parentId" : "b3fc0ca0-6bd0-45e9-95d0-f1012a002aa4",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "Field, yes, but this is a trait, which needs to expose all these elements.\r\n\r\nTBH I would like to remove the `status` here and in `FinalReason` but that's a big change I'd like to do separately.",
+        "createdAt" : "2021-07-26T12:50:25Z",
+        "updatedAt" : "2021-07-26T12:50:25Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "c1f3711f285befaaee9cf5db7df6f0bdc78f6ca1",
+    "line" : 20,
+    "diffHunk" : "@@ -1,1 +232,236 @@\n      /** A protobuf gRPC status representing the error. */\n      def status: RpcStatus\n\n      /** Whether the rejection is a definite answer for the deduplication guarantees"
   }
 ]

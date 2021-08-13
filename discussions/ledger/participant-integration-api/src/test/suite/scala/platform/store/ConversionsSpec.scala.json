@@ -163,5 +163,49 @@
     "commit" : "c1f3711f285befaaee9cf5db7df6f0bdc78f6ca1",
     "line" : 31,
     "diffHunk" : "@@ -1,1 +29,33 @@      val reason = domain.RejectionReason.OutOfQuota(\"Insert coins to continue.\")\n      val converted = reason.toParticipantStateRejectionReason\n      converted.code should be(Status.Code.ABORTED.value())\n      converted.message should be(\"Resources exhausted: Insert coins to continue.\")\n    }"
+  },
+  {
+    "id" : "c57f2f0e-aefd-4bc4-90e3-88381987cd90",
+    "prId" : 10398,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10398#pullrequestreview-714773154",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "b3a1e8d1-43ed-48d8-b743-fca2dd6547c5",
+        "parentId" : null,
+        "authorId" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "body" : "Why is this error not a `RESOURCE_EXHAUSTED`?",
+        "createdAt" : "2021-07-26T10:29:21Z",
+        "updatedAt" : "2021-07-26T10:41:40Z",
+        "lastEditedBy" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "bf7e4344-48de-41a8-8da0-a163088e721c",
+        "parentId" : "b3a1e8d1-43ed-48d8-b743-fca2dd6547c5",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "I didn't want to change behavior. I agree that this is probably wrong.",
+        "createdAt" : "2021-07-26T10:50:04Z",
+        "updatedAt" : "2021-07-26T10:50:05Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "49216ade-db1c-4b31-8650-f905c82dee61",
+        "parentId" : "b3a1e8d1-43ed-48d8-b743-fca2dd6547c5",
+        "authorId" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "body" : "Makes sense. Let's double-check the mapping between rejection reasons and gRPC error codes later.",
+        "createdAt" : "2021-07-26T12:16:42Z",
+        "updatedAt" : "2021-07-26T12:16:42Z",
+        "lastEditedBy" : "8690c022-0eb5-4c0b-9f54-a9e6ad005a86",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "c1f3711f285befaaee9cf5db7df6f0bdc78f6ca1",
+    "line" : 31,
+    "diffHunk" : "@@ -1,1 +29,33 @@      val reason = domain.RejectionReason.OutOfQuota(\"Insert coins to continue.\")\n      val converted = reason.toParticipantStateRejectionReason\n      converted.code should be(Status.Code.ABORTED.value())\n      converted.message should be(\"Resources exhausted: Insert coins to continue.\")\n    }"
   }
 ]

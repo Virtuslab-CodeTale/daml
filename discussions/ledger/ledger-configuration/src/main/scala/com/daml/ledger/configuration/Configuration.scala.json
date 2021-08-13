@@ -108,5 +108,60 @@
     "commit" : "b9aeee304f572184f78062c263b42c48af5ee4c8",
     "line" : 17,
     "diffHunk" : "@@ -1,1 +35,39 @@    * very strange events, and should work for most ledger and participant configurations.\n    */\n  val reasonableMaxDeduplicationTime: Duration = Duration.ofDays(1)\n\n  val reasonableInitialConfiguration: Configuration = Configuration("
+  },
+  {
+    "id" : "c6a27973-ad7d-497e-a6e8-91f7483b7477",
+    "prId" : 10487,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10487#pullrequestreview-723417035",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "036e95c8-35aa-4796-a300-9994f18d5a66",
+        "parentId" : null,
+        "authorId" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "body" : "Can we add a comment as to why is 1 day a reasonable deduplication time? ",
+        "createdAt" : "2021-08-05T12:01:14Z",
+        "updatedAt" : "2021-08-05T12:07:47Z",
+        "lastEditedBy" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "b6a45a46-7835-43a2-a301-0bd53aab344f",
+        "parentId" : "036e95c8-35aa-4796-a300-9994f18d5a66",
+        "authorId" : "c83a17a2-0c0d-4811-9fe5-e560bb3ad87a",
+        "body" : "The original value was chosen more or less randomly, because we thought one day is long enough for applications to recover and retry failed commands. AFAIK some ledgers will want to set this to one week though.\r\n\r\nParticipants may have to keep command deduplication data for up to this period of time. The only reason for having an upper bound on this duration is to avoid unbounded storage requirements.",
+        "createdAt" : "2021-08-05T13:27:16Z",
+        "updatedAt" : "2021-08-05T13:27:16Z",
+        "lastEditedBy" : "c83a17a2-0c0d-4811-9fe5-e560bb3ad87a",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "e437f141-445a-457c-a286-c622230918f2",
+        "parentId" : "036e95c8-35aa-4796-a300-9994f18d5a66",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "Done.",
+        "createdAt" : "2021-08-05T14:18:10Z",
+        "updatedAt" : "2021-08-05T14:18:10Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "414a48bb-d405-42a0-ac3e-bef37ba433cd",
+        "parentId" : "036e95c8-35aa-4796-a300-9994f18d5a66",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "GitHub is not refreshing comments for me until I hit Refresh. That's fun.\r\n\r\nI'd be happy for driver authors to make this bigger; the important thing, as @rautenrieth-da says, is that it's bounded. However, I do think 1 day is totally reasonable for most set-ups.",
+        "createdAt" : "2021-08-05T14:20:37Z",
+        "updatedAt" : "2021-08-05T14:20:37Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "b9aeee304f572184f78062c263b42c48af5ee4c8",
+    "line" : 17,
+    "diffHunk" : "@@ -1,1 +35,39 @@    * very strange events, and should work for most ledger and participant configurations.\n    */\n  val reasonableMaxDeduplicationTime: Duration = Duration.ofDays(1)\n\n  val reasonableInitialConfiguration: Configuration = Configuration("
   }
 ]

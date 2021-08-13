@@ -1,0 +1,46 @@
+[
+  {
+    "id" : "539f9a68-3357-461c-835e-559052cf3df6",
+    "prId" : 10526,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10526#pullrequestreview-726343030",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "d86169b2-b57b-4ee4-9060-0a6da512413b",
+        "parentId" : null,
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "fwiw `TFun` is the non-infix version of this that we already have in `com.daml.lf.language.Util`. Maybe consider using that here?",
+        "createdAt" : "2021-08-10T08:55:47Z",
+        "updatedAt" : "2021-08-10T09:01:47Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "0ff53fe3-4d6f-488b-8f70-05a10be62dd2",
+        "parentId" : "d86169b2-b57b-4ee4-9060-0a6da512413b",
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "which probably applies to a lot of other things in this module.",
+        "createdAt" : "2021-08-10T09:00:04Z",
+        "updatedAt" : "2021-08-10T09:01:47Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "c5cb74c0-04ef-44fa-bbe6-256e938154c9",
+        "parentId" : "d86169b2-b57b-4ee4-9060-0a6da512413b",
+        "authorId" : "0aa8e877-303a-4005-8f07-7003661da2a6",
+        "body" : "Good point, I've re-used that module where applicable.",
+        "createdAt" : "2021-08-10T12:00:11Z",
+        "updatedAt" : "2021-08-10T12:00:11Z",
+        "lastEditedBy" : "0aa8e877-303a-4005-8f07-7003661da2a6",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "d34b7a8d9b401363dd4af20e026997efad617a19",
+    "line" : 12,
+    "diffHunk" : "@@ -1,1 +10,14 @@private[export] object AstSyntax {\n  implicit class AstArrow(private val rhs: Ast.Type) extends AnyVal {\n    def =>:(lhs: Ast.Type): Ast.Type = {\n      TFun(lhs, rhs)\n    }"
+  }
+]

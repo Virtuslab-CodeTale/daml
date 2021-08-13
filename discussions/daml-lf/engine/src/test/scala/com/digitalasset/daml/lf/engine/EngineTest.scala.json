@@ -383,5 +383,49 @@
     "commit" : "d17b2bf9cc8987154d6985b225c2718c6772a447",
     "line" : 12,
     "diffHunk" : "@@ -1,1 +133,137 @@    )\n\n  val defaultKey = Map(\n    GlobalKey.assertBuild(\n      TypeConName(basicTestsPkgId, withKeyTemplate),"
+  },
+  {
+    "id" : "b3a87249-6837-4c2d-80c2-5bd9f0a46123",
+    "prId" : 10394,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10394#pullrequestreview-715651714",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "64548ce9-cba2-444c-946b-36122c56afab",
+        "parentId" : null,
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "Was this just broken before? I’m a bit confused why we now need to add a global key that we did not need before.",
+        "createdAt" : "2021-07-27T08:01:41Z",
+        "updatedAt" : "2021-07-27T08:01:47Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "191d7b1f-70c2-4b54-a192-a98e09ad1e4d",
+        "parentId" : "64548ce9-cba2-444c-946b-36122c56afab",
+        "authorId" : "7e495b20-db12-4c9f-84f9-0c729e38a0c9",
+        "body" : "Before `1.14`, `by-key` node where replayed `by-id`, so we did not need to mock the `ResultNeedKey` lookup during reinterpretation. \r\n\r\nNow we have the `by-key` flag we replay them `by-key`, so we need to mock properly the  `ResultNeedKey` lookup. ",
+        "createdAt" : "2021-07-27T08:45:30Z",
+        "updatedAt" : "2021-07-27T08:45:30Z",
+        "lastEditedBy" : "7e495b20-db12-4c9f-84f9-0c729e38a0c9",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "fcacf4b9-b9f3-4d3f-baee-a64bf549998e",
+        "parentId" : "64548ce9-cba2-444c-946b-36122c56afab",
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "oh I see, so the state was broken before but because we replayed by-id speedy did not emit a SResultNeedKey. Thanks for the explanation",
+        "createdAt" : "2021-07-27T08:46:28Z",
+        "updatedAt" : "2021-07-27T08:46:28Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "d17b2bf9cc8987154d6985b225c2718c6772a447",
+    "line" : 12,
+    "diffHunk" : "@@ -1,1 +133,137 @@    )\n\n  val defaultKey = Map(\n    GlobalKey.assertBuild(\n      TypeConName(basicTestsPkgId, withKeyTemplate),"
   }
 ]

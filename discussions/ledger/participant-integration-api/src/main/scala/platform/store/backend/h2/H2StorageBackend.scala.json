@@ -53,5 +53,38 @@
     "commit" : "6a934ea876409f02b6a261c10a4ac52d2557d419",
     "line" : 366,
     "diffHunk" : "@@ -1,1 +364,368 @@  }\n\n  def flatTransactionSingleParty(\n      transactionId: TransactionId,\n      requestingParty: Ref.Party,"
+  },
+  {
+    "id" : "8ecb03bf-dbb5-4d9f-a627-81ba4ae8b696",
+    "prId" : 10523,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10523#pullrequestreview-726580209",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "5b413d70-5022-4fba-bc86-9516da6c0823",
+        "parentId" : null,
+        "authorId" : "940afe62-a033-4e56-b2d3-8de3ca6d6d5c",
+        "body" : "The parsing logic seems a non-trivial string logic, how about:\r\n- having a more streamlined signature to the pure function like def extractUserPasswordAndRemoveFromUrl(jdbcUrl: String): (String, Option[String], Option[String]) // (clensedUrl, foundUser, foundPassword)\r\n- having some simple unit tests to guard the pure function",
+        "createdAt" : "2021-08-10T12:17:13Z",
+        "updatedAt" : "2021-08-10T12:18:04Z",
+        "lastEditedBy" : "940afe62-a033-4e56-b2d3-8de3ca6d6d5c",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "b69ecb70-77f0-446a-81ed-a0157d7413d5",
+        "parentId" : "5b413d70-5022-4fba-bc86-9516da6c0823",
+        "authorId" : "d7d10058-0c3f-4068-af8a-3d7024c74f76",
+        "body" : "Here is a preview of what that looks like (as part of follow-up): https://github.com/digital-asset/daml/compare/with-tests-h2-storage-backend-separate-user-and-password-from-url?expand=1",
+        "createdAt" : "2021-08-10T15:38:00Z",
+        "updatedAt" : "2021-08-10T15:38:01Z",
+        "lastEditedBy" : "d7d10058-0c3f-4068-af8a-3d7024c74f76",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "7236056285df90f93935db4d36374376b4cb83cd",
+    "line" : 11,
+    "diffHunk" : "@@ -1,1 +204,208 @@    // which is anyway not supported for production. (This also helps run canton h2 participants that set user and\n    // password.)\n    val urlNoUser = setKeyValueAndRemoveFromUrl(jdbcUrl, \"user\", h2DataSource.setUser)\n    val urlNoUserNoPassword =\n      setKeyValueAndRemoveFromUrl(urlNoUser, \"password\", h2DataSource.setPassword)"
   }
 ]

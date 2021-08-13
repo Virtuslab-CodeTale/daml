@@ -1,0 +1,57 @@
+[
+  {
+    "id" : "353b068d-c362-4f07-a27a-4c7b49e3d208",
+    "prId" : 10537,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10537#pullrequestreview-726586633",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "67867614-7f66-4d2a-867f-5d439a46e664",
+        "parentId" : null,
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "How much slower does it make the test?",
+        "createdAt" : "2021-08-10T14:24:38Z",
+        "updatedAt" : "2021-08-10T14:26:17Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "ddd8c16a-b969-441f-8843-5fa4de205154",
+        "parentId" : "67867614-7f66-4d2a-867f-5d439a46e664",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "On my machine the test file runs in ~100ms.",
+        "createdAt" : "2021-08-10T15:10:18Z",
+        "updatedAt" : "2021-08-10T15:10:19Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "6202ee7d-70bb-4194-8058-55f55ce0d63b",
+        "parentId" : "67867614-7f66-4d2a-867f-5d439a46e664",
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "How long did it take before?",
+        "createdAt" : "2021-08-10T15:15:43Z",
+        "updatedAt" : "2021-08-10T15:15:43Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "65236721-de5e-43e1-ba31-34c5b11d5353",
+        "parentId" : "67867614-7f66-4d2a-867f-5d439a46e664",
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "About 20ms. This is dwarfed by the time taken to actually run the test, BTW, which is around 700ms either way.",
+        "createdAt" : "2021-08-10T16:11:03Z",
+        "updatedAt" : "2021-08-10T16:11:04Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "a9b23750a30580109eb167aa05358548b7804c02",
+    "line" : 8,
+    "diffHunk" : "@@ -1,1 +8,12 @@import org.scalatest.matchers.should.Matchers\nimport org.scalatest.wordspec.AnyWordSpec\nimport org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks\n\nclass OffsetBuilderSpec extends AnyWordSpec with Matchers with ScalaCheckDrivenPropertyChecks {"
+  }
+]

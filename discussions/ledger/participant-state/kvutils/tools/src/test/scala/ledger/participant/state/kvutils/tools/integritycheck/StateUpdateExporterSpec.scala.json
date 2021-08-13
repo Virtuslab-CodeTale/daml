@@ -20,5 +20,27 @@
     "commit" : "d778ca5ece4bf865818dc61a2e766da722deacb8",
     "line" : 26,
     "diffHunk" : "@@ -1,1 +24,28 @@\nclass StateUpdateExporterSpec\n    extends TestKit(ActorSystem(classOf[StateUpdateExporterSpec].getSimpleName))\n    with AsyncWordSpecLike\n    with Matchers"
+  },
+  {
+    "id" : "9edd2cc4-d8a0-450b-99d9-eef6602f909c",
+    "prId" : 10573,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10573#pullrequestreview-728535759",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "969b327f-b641-4b7e-9b0c-e2a7de0a1911",
+        "parentId" : null,
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "Likewise, Scala 2.13.6 detected that this was overriding an `executionContext` in `AsyncTestSuite`.",
+        "createdAt" : "2021-08-12T12:29:22Z",
+        "updatedAt" : "2021-08-12T12:29:25Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "bbe6033aa7b5759de5280799608a99d7da0a3798",
+    "line" : 5,
+    "diffHunk" : "@@ -1,1 +35,39 @@\n  private[this] implicit val materializer: Materializer = Materializer(system)\n  private[this] implicit val ec: ExecutionContext = materializer.executionContext\n\n  override def afterAll(): Unit = {"
   }
 ]

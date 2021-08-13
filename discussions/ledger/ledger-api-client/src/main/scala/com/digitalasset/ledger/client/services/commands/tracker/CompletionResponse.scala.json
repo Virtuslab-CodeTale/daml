@@ -1,0 +1,35 @@
+[
+  {
+    "id" : "c65fc805-4919-4f8f-89f5-e3203ab67fc1",
+    "prId" : 10503,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10503#pullrequestreview-725251028",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "2891618c-f9da-4515-be7a-c5c1cd24de55",
+        "parentId" : null,
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "When does the ledger produce this?",
+        "createdAt" : "2021-08-09T08:31:08Z",
+        "updatedAt" : "2021-08-09T09:22:21Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "46ea6542-25ab-45d8-a775-c809978e17d6",
+        "parentId" : "2891618c-f9da-4515-be7a-c5c1cd24de55",
+        "authorId" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "body" : "In theory it should never happen.\r\nBut we have to handle this case because of the type we receive, as the GRPC status is optional in the protobuf `Completion`.\r\n",
+        "createdAt" : "2021-08-09T10:57:50Z",
+        "updatedAt" : "2021-08-09T10:57:51Z",
+        "lastEditedBy" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "ca78cd90d0d4f0d64d7f2b7a60ab9491dd92b835",
+    "line" : 22,
+    "diffHunk" : "@@ -1,1 +20,24 @@      extends CompletionFailure\n  final case class TimeoutResponse(commandId: String) extends CompletionFailure\n  final case class NoStatusInResponse(commandId: String) extends CompletionFailure\n\n  final case class CompletionSuccess("
+  }
+]

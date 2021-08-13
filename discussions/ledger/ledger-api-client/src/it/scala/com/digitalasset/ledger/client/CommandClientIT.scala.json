@@ -1,0 +1,68 @@
+[
+  {
+    "id" : "ac6de14d-a392-489f-acf7-27dacd6c8cd8",
+    "prId" : 10503,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10503#pullrequestreview-724399607",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "acee3f84-cee1-44f0-9e86-037de103a7dc",
+        "parentId" : null,
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "Probably just my ignorance about `Inside` but this match doesn't seem exhaustive and, if so, what (failure, hopefully) message do we get in other cases?",
+        "createdAt" : "2021-08-06T09:47:00Z",
+        "updatedAt" : "2021-08-06T09:55:25Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "7ff84ebc-ac78-43f1-95a7-20a90290c2a3",
+        "parentId" : "acee3f84-cee1-44f0-9e86-037de103a7dc",
+        "authorId" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "body" : "Yes. So in case of not matching we will get a failure.\r\nI based the example on scalatest docs:\r\n\r\nhttps://www.scalatest.org/user_guide/using_inside\r\n\r\nChecking the source code we get a failure when the match is partial:\r\n\r\n```\r\n   if (pf.isDefinedAt(value)) {\r\n     ......\r\n    }\r\n    else {\r\n      Inside.level.set(Inside.level.get - 1)\r\n      throw new TestFailedException((_: StackDepthException) => Some(Resources.insidePartialFunctionNotDefined(value.toString())), None, pos)\r\n    }\r\n```",
+        "createdAt" : "2021-08-06T10:14:15Z",
+        "updatedAt" : "2021-08-06T10:14:15Z",
+        "lastEditedBy" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "c8b63549-3312-43a1-b2f9-abc4cbcc16df",
+        "parentId" : "acee3f84-cee1-44f0-9e86-037de103a7dc",
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "Alright, it stringifies the whole value, which should be fine, thanks for checking and sorry for the laziness 👍🏼 ",
+        "createdAt" : "2021-08-06T10:24:39Z",
+        "updatedAt" : "2021-08-06T10:24:39Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "23862f8d-c538-474a-8dc1-f8272176ce68",
+        "parentId" : "acee3f84-cee1-44f0-9e86-037de103a7dc",
+        "authorId" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "body" : "👍 I don't like the fact that this is not capture in the scaladocs themselves, had to dive into the source code to figure it out ",
+        "createdAt" : "2021-08-06T11:49:17Z",
+        "updatedAt" : "2021-08-06T11:49:17Z",
+        "lastEditedBy" : "2a803e3e-0f8e-44e8-a99a-06dffc638187",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "4c48ad38-9503-4dd5-a61a-6d951e46da1f",
+        "parentId" : "acee3f84-cee1-44f0-9e86-037de103a7dc",
+        "authorId" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "body" : "Sadly, it often happens with Scala libs.",
+        "createdAt" : "2021-08-06T14:10:29Z",
+        "updatedAt" : "2021-08-06T14:10:29Z",
+        "lastEditedBy" : "1d70ec7b-8793-4cc6-95c8-fac6f7816dcc",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "ca78cd90d0d4f0d64d7f2b7a60ab9491dd92b835",
+    "line" : 75,
+    "diffHunk" : "@@ -1,1 +164,168 @@        grpcStatus.code should be(expectedErrorCode.value)\n        grpcStatus.message should include(expectedMessageSubString)\n      }\n    }(DirectExecutionContext)\n"
+  }
+]

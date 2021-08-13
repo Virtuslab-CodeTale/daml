@@ -240,5 +240,27 @@
     "commit" : "172715cbea18231150b7d6276af1c3f63490bc2f",
     "line" : 83,
     "diffHunk" : "@@ -1,1 +77,81 @@          // package once. Other concurrent calls to add this package will block\n          // waiting for the first one to finish.\n          _packages.computeIfAbsent(\n            pkgId, { _ =>\n              // Compile the speedy definitions for this package."
+  },
+  {
+    "id" : "4efdae67-72f6-422a-b63b-3a9097945b5d",
+    "prId" : 10573,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10573#pullrequestreview-728535759",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "85d2b154-82cb-4093-b0d1-aa609596178c",
+        "parentId" : null,
+        "authorId" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "body" : "I had to rename this because Scala 2.13.6 detected that it was overriding a `def definitions` higher up the inheritance hierarchy, and weakening it scope (from public to private).",
+        "createdAt" : "2021-08-12T12:28:57Z",
+        "updatedAt" : "2021-08-12T12:29:25Z",
+        "lastEditedBy" : "181bcece-33df-41af-887d-5d5f51beb543",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "bbe6033aa7b5759de5280799608a99d7da0a3798",
+    "line" : 5,
+    "diffHunk" : "@@ -1,1 +24,28 @@  private[this] val signatures: ConcurrentMap[PackageId, PackageSignature] =\n    new ConcurrentHashMap().asScala\n  private[this] val definitionsByReference\n      : ConcurrentHashMap[speedy.SExpr.SDefinitionRef, speedy.SDefinition] =\n    new ConcurrentHashMap()"
   }
 ]

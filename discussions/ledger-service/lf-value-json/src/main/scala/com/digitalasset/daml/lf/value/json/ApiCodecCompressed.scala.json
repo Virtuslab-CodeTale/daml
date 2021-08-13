@@ -141,5 +141,60 @@
     "commit" : "50d50f5405a576f7c0ce7faeb793f2e0ba9f1682",
     "line" : 7,
     "diffHunk" : "@@ -1,1 +139,143 @@      case Model.DamlLfPrimType.Date => { case JsString(v) =>\n        try {\n          V.ValueDate.fromIso8601(v)\n        } catch {\n          case _: java.time.format.DateTimeParseException | _: IllegalArgumentException =>"
+  },
+  {
+    "id" : "4d786847-3905-48fb-aeff-e5714d017f84",
+    "prId" : 10489,
+    "prUrl" : "https://github.com/digital-asset/daml/pull/10489#pullrequestreview-724354023",
+    "prSource" : "GitHub",
+    "comments" : [
+      {
+        "id" : "37860b09-72ed-4b0b-b3e7-d64e391abb20",
+        "parentId" : null,
+        "authorId" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "body" : "probably not in scope for this PR but we might want to consider having `fromIso8601`return an `Either` and having an `assertFromIso8601` that throws like we do in lots of other places.",
+        "createdAt" : "2021-08-05T13:22:59Z",
+        "updatedAt" : "2021-08-05T13:24:58Z",
+        "lastEditedBy" : "7ddbf119-9fd4-4e95-b47a-aa60f2648372",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "d4b0919a-162a-4487-9e6f-6ba5f8ae6f69",
+        "parentId" : "37860b09-72ed-4b0b-b3e7-d64e391abb20",
+        "authorId" : "8afc1e61-17e0-4309-b9ea-f0690fd56c47",
+        "body" : "@realvictorprm Since you offered, do you want to take care of this part?",
+        "createdAt" : "2021-08-06T10:42:01Z",
+        "updatedAt" : "2021-08-06T10:42:01Z",
+        "lastEditedBy" : "8afc1e61-17e0-4309-b9ea-f0690fd56c47",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "9181c25c-00dd-4ead-ad09-c32e7530b9f2",
+        "parentId" : "37860b09-72ed-4b0b-b3e7-d64e391abb20",
+        "authorId" : "c4645a69-f802-4b1d-b965-7b5142892664",
+        "body" : "Will do :)",
+        "createdAt" : "2021-08-06T11:47:33Z",
+        "updatedAt" : "2021-08-06T11:47:34Z",
+        "lastEditedBy" : "c4645a69-f802-4b1d-b965-7b5142892664",
+        "tags" : [
+        ]
+      },
+      {
+        "id" : "52c2349f-eafa-4f9f-9683-a2b519f61e58",
+        "parentId" : "37860b09-72ed-4b0b-b3e7-d64e391abb20",
+        "authorId" : "8afc1e61-17e0-4309-b9ea-f0690fd56c47",
+        "body" : "Thanks!",
+        "createdAt" : "2021-08-06T13:25:08Z",
+        "updatedAt" : "2021-08-06T13:25:08Z",
+        "lastEditedBy" : "8afc1e61-17e0-4309-b9ea-f0690fd56c47",
+        "tags" : [
+        ]
+      }
+    ],
+    "commit" : "50d50f5405a576f7c0ce7faeb793f2e0ba9f1682",
+    "line" : 7,
+    "diffHunk" : "@@ -1,1 +139,143 @@      case Model.DamlLfPrimType.Date => { case JsString(v) =>\n        try {\n          V.ValueDate.fromIso8601(v)\n        } catch {\n          case _: java.time.format.DateTimeParseException | _: IllegalArgumentException =>"
   }
 ]
